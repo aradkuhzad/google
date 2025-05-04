@@ -13,8 +13,39 @@ color:white;">
 
 
 
+body {
+            background-color: #101218;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .search-container {
+            text-align: center;
+        }
+
+        .search-box {
+            padding: 0 20px;
+            width: 584px;
+            height: 46px; /* ارتفاع مشخص برای باکس */
+            border: none;
+            border-radius: 30px;
+            outline: none;
+            background-color:#3F4454 ;
+            color: white;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            }
 
 
+            .search-box::placeholder {
+        text-align: left; /* متن پیش‌فرض (Placeholder) را وسط‌چین می‌کند */
+        color: #888;
+    }
 
 
     </style>
@@ -29,11 +60,18 @@ color:white;">
 
 
 
-
+        <div class="search-container">
+            <form>
+                <input type="text" class="search-box">
+              
+            </form>
+        </div>
 
 
 
 
 
     </body>
+
+
 </html>
