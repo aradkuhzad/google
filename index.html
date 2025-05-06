@@ -24,12 +24,13 @@ body {
         }
 
         .search-container {
-            text-align: center;
+            position: relative;
+            width: 584px;
         }
 
         .search-box {
             padding: 0 20px;
-            width: 584px;
+            width: 100%;
             height: 46px; /* ارتفاع مشخص برای باکس */
             border: none;
             border-radius: 30px;
@@ -43,9 +44,36 @@ body {
 
 
             .search-box::placeholder {
-        text-align: left; /* متن پیش‌فرض (Placeholder) را وسط‌چین می‌کند */
         color: #888;
     }
+
+
+
+
+    .icon-left,
+    .icon-right {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px; /* عرض آیکون */
+        height: 20px; /* ارتفاع آیکون */
+    }
+
+    .icon-left {
+        left: 15px; /* فاصله از سمت چپ */
+    }
+
+    .icon-right {
+        right: 15px; /* فاصله از سمت راست */
+    }
+
+    .icon-right + .icon-right {
+        right: 50px; /* فاصله آیکون دوم از آیکون اول */
+    }
+
+
+
+
 
 
     </style>
@@ -59,14 +87,12 @@ body {
     <body>
 
 
-
         <div class="search-container">
-            <form>
-                <input type="text" class="search-box">
-              
-            </form>
+            <img class="icon-left" src="search-interface-symbol (1).png" alt="Search Icon"> <!-- آیکون سمت چپ -->
+            <input type="text" class="search-box">
+            <img class="icon-right" src="microphone.png" alt="Mic Icon"> <!-- آیکون سمت راست -->
+            <img class="icon-right" src="camera.png" alt="Camera Icon"> <!-- آیکون دوم سمت راست -->
         </div>
-
 
 
 
