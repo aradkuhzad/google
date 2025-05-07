@@ -12,6 +12,57 @@ color:white;">
 
 
 
+
+.top-right-menu {
+        position: absolute;
+        top: 0; /* فاصله از بالا */
+        right: -800px; /* فاصله از راست */
+        display: flex;
+        align-items: center;
+        gap: 20px; /* فاصله بین آیتم‌ها */
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        color: white;
+    }
+
+    .top-right-menu a {
+        text-decoration: none; /* حذف خط زیر متن */
+        color: white;
+        position: relative;
+    }
+
+    .top-right-menu a::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -2px; /* فاصله خط از متن */
+        width: 0;
+        height: 2px;
+        background-color: white;
+    }
+
+    .top-right-menu a:hover::after {
+        width: 100%; /* خط کامل زیر متن هنگام هاور */
+    }
+
+    .icon {
+        width: 20px; /* عرض آیکون */
+        height: 20px; /* ارتفاع آیکون */
+    }
+
+    .profile-logo {
+        width: 32px; /* عرض لوگو */
+        height: 32px; /* ارتفاع لوگو */
+        border-radius: 50%; /* دایره‌ای کردن لوگو */
+        object-fit: cover; /* تناسب تصویر */
+    }
+
+
+
+
+
+
+
     .top-menu {
         position: absolute;
         top: 20px; /* فاصله از بالا */
@@ -133,6 +184,25 @@ body {
         <div class="top-menu">
             <a href="#">About</a>
             <a href="#">Store</a>
+
+
+
+          
+        
+            <div class="top-right-menu">
+                <a href="#">Gmail</a>
+                <a href="#">Images</a>
+                <img class="icon" src="application.png" alt="Menu Icon">
+                <img class="profile-logo" src="download.jpg" alt="Profile Logo">
+            </div>
+        
+            <div class="search-container">
+                <!-- ... -->
+            </div>
+
+
+
+
 
 
     </body>
