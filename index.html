@@ -12,6 +12,41 @@ color:white;">
 
 
 
+    .top-menu {
+        position: absolute;
+        top: 20px; /* فاصله از بالا */
+        left: 20px; /* فاصله از چپ */
+        display: flex;
+        gap: 20px; /* فاصله بین آیتم‌ها */
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        color: white;
+    }
+
+    .top-menu a {
+        text-decoration: none; /* حذف خط زیر متن */
+        color: white;
+        position: relative;
+    }
+
+    .top-menu a::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -2px; /* فاصله خط از متن */
+        width: 0;
+        height: 2px;
+        background-color: white;
+    }
+
+    .top-menu a:hover::after {
+        width: 100%; /* خط کامل زیر متن هنگام هاور */
+    }
+
+
+
+
+
 
 body {
             background-color: #101218;
@@ -95,6 +130,9 @@ body {
         </div>
 
 
+        <div class="top-menu">
+            <a href="#">About</a>
+            <a href="#">Store</a>
 
 
     </body>
