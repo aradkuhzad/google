@@ -1,211 +1,217 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
-<Title>Google</Title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
 
-    <head>
-
-        <body style="background-color:#101218;
-color:white;">
-
-<style>
-
-
-
-
-.top-right-menu {
-        position: absolute;
-        top: 0; /* فاصله از بالا */
-        right: -800px; /* فاصله از راست */
-        display: flex;
-        align-items: center;
-        gap: 20px; /* فاصله بین آیتم‌ها */
-        font-family: Arial, sans-serif;
-        font-size: 16px;
-        color: white;
-    }
-
-    .top-right-menu a {
-        text-decoration: none; /* حذف خط زیر متن */
-        color: white;
-        position: relative;
-    }
-
-    .top-right-menu a::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: -2px; /* فاصله خط از متن */
-        width: 0;
-        height: 2px;
-        background-color: white;
-    }
-
-    .top-right-menu a:hover::after {
-        width: 100%; /* خط کامل زیر متن هنگام هاور */
-    }
-
-    .icon {
-        width: 20px; /* عرض آیکون */
-        height: 20px; /* ارتفاع آیکون */
-    }
-
-    .profile-logo {
-        width: 32px; /* عرض لوگو */
-        height: 32px; /* ارتفاع لوگو */
-        border-radius: 50%; /* دایره‌ای کردن لوگو */
-        object-fit: cover; /* تناسب تصویر */
-    }
-
-
-
-
-
-
-
-    .top-menu {
-        position: absolute;
-        top: 20px; /* فاصله از بالا */
-        left: 20px; /* فاصله از چپ */
-        display: flex;
-        gap: 20px; /* فاصله بین آیتم‌ها */
-        font-family: Arial, sans-serif;
-        font-size: 16px;
-        color: white;
-    }
-
-    .top-menu a {
-        text-decoration: none; /* حذف خط زیر متن */
-        color: white;
-        position: relative;
-    }
-
-    .top-menu a::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: -2px; /* فاصله خط از متن */
-        width: 0;
-        height: 2px;
-        background-color: white;
-    }
-
-    .top-menu a:hover::after {
-        width: 100%; /* خط کامل زیر متن هنگام هاور */
-    }
-
-
-
-
-
-
-body {
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google</title>
+    <style>
+        body {
             background-color: #101218;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            color: #fff;
             margin: 0;
             font-family: Arial, sans-serif;
+            min-height: 100vh;
+            overflow: hidden;
         }
-
-        .search-container {
-            position: relative;
-            width: 584px;
-        }
-
-        .search-box {
-            padding: 0 20px;
-            width: 100%;
-            height: 46px; /* ارتفاع مشخص برای باکس */
-            border: none;
-            border-radius: 30px;
-            outline: none;
-            background-color:#3F4454 ;
-            color: white;
-            text-align: left;
+        .top-right-menu {
+            position: absolute;
+            top: 18px;
+            right: 30px;
             display: flex;
             align-items: center;
+            gap: 20px;
+            z-index: 10;
+        }
+        .top-right-menu a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 15px;
+            position: relative;
+            padding: 0 4px;
+            transition: color 0.2s;
+        }
+        .top-right-menu a:hover {
+            color: #8ab4f8;
+        }
+        .icon {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+        }
+        .profile-logo {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-left: 8px;
+            cursor: pointer;
+        }
+        .center-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .google-logo {
+            font-family: 'Product Sans', Arial, sans-serif;
+            font-size: 84px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            margin-top: -100px;
+            letter-spacing: -2px;
+        }
+        .search-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .search-box {
+            width: 100%;
+            height: 48px;
+            border: none;
+            border-radius: 24px;
+            background: #3F4454;
+            color: #fff;
+            font-size: 18px;
+            padding: 0 50px 0 50px;
+            box-sizing: border-box;
+            outline: none;
+            transition: box-shadow 0.2s;
+        }
+        .search-box:focus {
+            box-shadow: #3F4454;
+            background: #3F4454;
+        }
+        .icon-left, .icon-right {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 22px;
+            height: 22px;
+            opacity: 0.7;
+        }
+        .icon-left {
+            left: 18px;
+        }
+        .icon-right {
+            right: 18px;
+        }
+        .icon-right.camera {
+            right: 54px;
+        }
+        .search-buttons {
+            margin-top: 32px;
+            display: flex;
+            gap: 12px;
+        }
+        .search-buttons button {
+            background: #3F4454;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 10px 28px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+        }
+        .search-buttons button:hover {
+            background: #44474f;
+            color: #8ab4f8;
+
+
+
+        }
+        .footer {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100vw;
+            background: #1F2128;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+            height: 48px;
+            font-size: 13px;
+            z-index: 100;
+            white-space: nowrap;
+        }
+        .footer-left, .footer-right {
+            display: flex;
+            gap: 30px;
+        }
+        .footer-right {
+        margin-left: 900px;
+        }
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            color: #8ab4f8;
+        }
+        .footer-left a, .footer-right a {
+            font-size: 14px !important;
+        }
+        .footer-left a:first-child {
+            margin-left: 30px;
+        }
+        .footer-right a:last-child {
+            margin-right: 20px;
+        }
+        @media (max-width: 700px) {
+            .google-logo { font-size: 48px; }
+            .search-container { max-width: 95vw; }
+            .footer {
+                flex-direction: column;
+                align-items: flex-start;
+                height: auto;
+                padding: 10px 10px;
+                gap: 10px;
+                white-space: normal;
             }
-
-
-            .search-box::placeholder {
-        color: #888;
-    }
-
-
-
-
-    .icon-left,
-    .icon-right {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 20px; /* عرض آیکون */
-        height: 20px; /* ارتفاع آیکون */
-    }
-
-    .icon-left {
-        left: 15px; /* فاصله از سمت چپ */
-    }
-
-    .icon-right {
-        right: 15px; /* فاصله از سمت راست */
-    }
-
-    .icon-right + .icon-right {
-        right: 50px; /* فاصله آیکون دوم از آیکون اول */
-    }
-
-
-
-
-
-
+           
+        }
     </style>
-
-
-
-    </head>
-
-
-
-    <body>
-
-
+</head>
+<body>
+    <div class="top-right-menu">
+        <a href="#">Gmail</a>
+        <a href="#">Images</a>
+        <img class="icon" src="application.png" alt="Menu Icon">
+        <img class="profile-logo" src="download.jpg" alt="Profile Logo">
+    </div>
+    <div class="center-content">
+        <div class="google-logo">Google</div>
         <div class="search-container">
-            <img class="icon-left" src="search-interface-symbol (1).png" alt="Search Icon"> <!-- آیکون سمت چپ -->
+            <img class="icon-left" src="search-interface-symbol (1).png" alt="Search Icon">
             <input type="text" class="search-box">
-            <img class="icon-right" src="microphone.png" alt="Mic Icon"> <!-- آیکون سمت راست -->
-            <img class="icon-right" src="camera.png" alt="Camera Icon"> <!-- آیکون دوم سمت راست -->
+            <img class="icon-right" src="microphone.png" alt="Mic Icon">
+            <img class="icon-right camera" src="camera.png" alt="Camera Icon">
         </div>
-
-
-        <div class="top-menu">
+        <div class="search-buttons">
+            <button>Google Search</button>
+            <button>I'm Feeling Lucky</button>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-left">
             <a href="#">About</a>
-            <a href="#">Store</a>
-
-
-
-          
-        
-            <div class="top-right-menu">
-                <a href="#">Gmail</a>
-                <a href="#">Images</a>
-                <img class="icon" src="application.png" alt="Menu Icon">
-                <img class="profile-logo" src="download.jpg" alt="Profile Logo">
-            </div>
-        
-            <div class="search-container">
-                <!-- ... -->
-            </div>
-
-
-
-
-
-
-    </body>
-
-
+            <a href="#">Advertising</a>
+            <a href="#">Business</a>
+            <a href="#">How Search works</a>
+        </div>
+        <div class="footer-right">
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Settings</a>
+        </div>
+    </div>
+</body>
 </html>
